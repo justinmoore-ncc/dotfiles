@@ -3,7 +3,7 @@ setopt histignorealldups
 # Share history between terminals
 setopt sharehistory
 # Use vi keybindings instead of emacs(default)
- bindkey -v
+bindkey -v
 
 # Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=100000
@@ -106,26 +106,6 @@ FX=(
     blink     "%{[05m%}" no-blink     "%{[25m%}"
     reverse   "%{[07m%}" no-reverse   "%{[27m%}"
 )
-
-# Color testing functions
-for color in {000..255}; do
-    FG[$color]="%{[38;5;${color}m%}"
-    BG[$color]="%{[48;5;${color}m%}"
-done
-
-function spectrum_ls() {
-  for code in {000..255}; do
-    print -P -- "$code: %F{$code}Test%f"
-  done
-}
-
-function spectrum_bls() {
-  for code in {000..255}; do
-    ((cc = code + 1))
-    print -P -- "$BG[$code]$code: Test %{$reset_color%}"
-  done
-}
-
 
 # Less Colors for Man Pages 
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking 

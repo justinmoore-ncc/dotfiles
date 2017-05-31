@@ -1,6 +1,5 @@
 set nocompatible
 filetype off
-"set rtp+=~/.vim/bundle/vundle
 set rtp+=/usr/local/opt/fzf
 call plug#begin('~/.vim/plugged')
 
@@ -164,19 +163,16 @@ com! WP call WordProcessorMode()
 augroup filetxt_txt
 	autocmd!
 	autocmd BufEnter,BufNewFile,BufRead *.txt call WordProcessorMode()
-	"autocmd FileType *.txt NeoCompleteLock
 augroup END
 
 augroup filetype_md
 	autocmd!
 	autocmd BufEnter,BufRead,BufNewFile *.md call WordProcessorMode()
-	"autocmd FileType markdown NeoCompleteLock
 augroup END
 
 augroup filetype_tex
 	autocmd!
 	autocmd BufEnter,BufRead,BufNewFile *.tex call WordProcessorMode()
-	"autocmd FileType latex NeoCompleteLock
 augroup END
 
 augroup filetype_pde
